@@ -1,0 +1,57 @@
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Ignore virtual environment folders
+venv/
+env/
+*.env
+
+# Ignore macOS hidden files
+.DS_Store
+
+# Ignore Flask instance and static files that are generated
+instance/
+static/
+
+# Ignore SQLite database files
+*.sqlite3
+*.db
+
+# Ignore logs and temporary files
+*.log
+*.temp
+*.tmp
+*.pid
+*.swp
+*.swo
+*.bak
+
+# Ignore Jupyter notebooks checkpoints (if you use any)
+.ipynb_checkpoints
+
+# Ignore node_modules in React frontend
+frontend/node_modules/
+
+# Ignore build artifacts
+frontend/build/
+frontend/.next/
+frontend/out/
+frontend/dist/
+
+# Ignore npm debug log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore coverage reports
+coverage/
+*.lcov
+.lcov/
+
+# Ignore cache files
+*.cache
+.pnpm-store/
+/backend/rds
