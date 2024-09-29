@@ -46,7 +46,7 @@ p {
 /* Grid layout for cards - 2 cards per row and centered */
 .role-cards, .subcategory-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+    grid-template-columns: repeat(3, 2fr); /* 2 columns layout */
     gap: 20px; /* Spacing between the cards */
     justify-items: center;
     margin-top: 30px;
@@ -131,4 +131,36 @@ button:hover {
       width: 80%; /* Make cards full-width on smaller screens */
       margin-bottom: 20px;
     }
+}
+/* Button Styles */
+button {
+    padding: 12px 30px;
+    background-color: #ef233c; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d90429;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Next Button Styles */
+.next-button {
+    background-color: #28a745; /* Green color for next button */
+}
+
+.next-button:hover {
+    background-color: #218838;
 }
