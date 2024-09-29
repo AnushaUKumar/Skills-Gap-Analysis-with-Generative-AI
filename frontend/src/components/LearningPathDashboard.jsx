@@ -269,19 +269,274 @@
 // };
 
 // export default LearningPathDashboard;
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { useLocation, useNavigate } from 'react-router-dom'; 
+// import './LearningPathDashboard.css';
+
+// const LearningPathDashboard = () => {
+//   const location = useLocation();
+//   const navigate = useNavigate(); 
+//   const { skillsGap = [] } = location.state || {}; // Get skills gap from the previous page
+//   const [loading, setLoading] = useState(false); // To show a loading indicator during the API call
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     console.log("Skills Gap: ", skillsGap); // Log skillsGap to check if it's populated
+//   }, [skillsGap]);
+
+//   const fetchLearningPath = async (skill) => {
+//     setLoading(true); // Set loading state when fetching starts
+//     try {
+//       console.log(`Fetching learning path for: ${skill}`);
+//       const response = await axios.post('http://127.0.0.1:5000/get-learning-path', {
+//         language: skill,
+//       }, {
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
+
+//       console.log('API Response:', response.data);
+
+//       // Navigate to the Learning Resources page with resources in the state
+//       navigate('/learning-resources', { state: { skill, resources: response.data.resources || [] } });
+//     } catch (error) {
+//       setError(`Failed to fetch learning path for ${skill}`);
+//       console.error('API error:', error);
+//     } finally {
+//       setLoading(false); // Stop loading state
+//     }
+//   };
+
+//   const handleSkillClick = (skill) => {
+//     fetchLearningPath(skill);
+//   };
+
+//   return (
+//     <div className="learning-path-dashboard">
+//       <h2>Learning Path Dashboard</h2>
+
+//       {loading ? (
+//         <p>Fetching learning path...</p>
+//       ) : (
+//         <>
+//           {skillsGap.length > 0 ? (
+//             skillsGap.map((skill, index) => (
+//               <div key={index} className="skill-section">
+//                 <div className="skill-header">
+//                   <span className="skill-name">{skill}</span>
+//                   <span className="skill-percentage">Learning path to follow</span>
+//                 </div>
+
+//                 <div className="learning-paths">
+//                   <h4>Suggested Learning Paths:</h4>
+//                   <ul>
+//                     <li>
+//                       <a
+//                         href="#"
+//                         onClick={() => handleSkillClick(skill)} // Fetch learning path when clicked
+//                       >
+//                         {`Fetch learning path for ${skill}`}
+//                       </a>
+//                     </li>
+//                   </ul>
+//                 </div>
+//               </div>
+//             ))
+//           ) : (
+//             <p>No skills gap available.</p>
+//           )}
+//         </>
+//       )}
+
+//       {/* Display any error messages */}
+//       {error && <div className="error-message">{error}</div>}
+//     </div>
+//   );
+// };
+
+// export default LearningPathDashboard;
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { useLocation, useNavigate } from 'react-router-dom'; 
+// import './LearningPathDashboard.css';
+
+// const LearningPathDashboard = () => {
+//   const location = useLocation();
+//   const navigate = useNavigate(); 
+//   const { skillsGap = [] } = location.state || {}; // Get skills gap from the previous page
+//   const [loading, setLoading] = useState(false); // To show a loading indicator during the API call
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     console.log("Skills Gap: ", skillsGap); // Log skillsGap to check if it's populated
+//   }, [skillsGap]);
+
+//   const fetchLearningPath = async (skill) => {
+//     setLoading(true); // Set loading state when fetching starts
+//     try {
+//       console.log(`Fetching learning path for: ${skill}`);
+//       const response = await axios.post('http://127.0.0.1:5000/get-learning-path', {
+//         language: skill,
+//       }, {
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
+
+//       console.log('API Response:', response.data);
+
+//       // Navigate to the Learning Resources page with resources in the state
+//       navigate('/learning-resources', { state: { skill, resources: response.data.resources || [] } });
+//     } catch (error) {
+//       setError(`Failed to fetch learning path for ${skill}`);
+//       console.error('API error:', error);
+//     } finally {
+//       setLoading(false); // Stop loading state
+//     }
+//   };
+
+//   const handleSkillClick = (skill) => {
+//     fetchLearningPath(skill);
+//   };
+
+//   return (
+//     <div className="learning-path-dashboard">
+//       <h2>Learning Path Dashboard</h2>
+
+//       {loading ? (
+//         <p>Fetching learning path...</p>
+//       ) : (
+//         <>
+//           {skillsGap.length > 0 ? (
+//             skillsGap.map((skill, index) => (
+//               <div key={index} className="skill-section">
+//                 <div className="learning-paths">
+//                   <ul>
+//                     <li>
+//                       <a
+//                         href="#"
+//                         onClick={() => handleSkillClick(skill)} // Fetch learning path when clicked
+//                       >
+//                         {skill} {/* Only display the skill name */}
+//                       </a>
+//                     </li>
+//                   </ul>
+//                 </div>
+//               </div>
+//             ))
+//           ) : (
+//             <p>No skills gap available.</p>
+//           )}
+//         </>
+//       )}
+
+//       {/* Display any error messages */}
+//       {error && <div className="error-message">{error}</div>}
+//     </div>
+//   );
+// };
+
+// export default LearningPathDashboard;
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { useLocation, useNavigate } from 'react-router-dom'; 
+// import './LearningPathDashboard.css';
+
+// const LearningPathDashboard = () => {
+//   const location = useLocation();
+//   const navigate = useNavigate(); 
+//   const { skillsGap = [] } = location.state || {}; // Get skills gap from the previous page
+//   const [loading, setLoading] = useState(false); // To show a loading indicator during the API call
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     console.log("Skills Gap: ", skillsGap); // Log skillsGap to check if it's populated
+//   }, [skillsGap]);
+
+//   const fetchLearningPath = async (skill) => {
+//     setLoading(true); // Set loading state when fetching starts
+//     try {
+//       console.log(`Fetching learning path for: ${skill}`);
+//       const response = await axios.post('http://127.0.0.1:5000/get-learning-path', {
+//         language: skill,
+//       }, {
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
+
+//       console.log('API Response:', response.data);
+
+//       // Navigate to the Learning Resources page with resources in the state
+//       navigate('/learning-resources', { state: { skill, resources: response.data.resources || [] } });
+//     } catch (error) {
+//       setError(`Failed to fetch learning path for ${skill}`);
+//       console.error('API error:', error);
+//     } finally {
+//       setLoading(false); // Stop loading state
+//     }
+//   };
+
+//   const handleSkillClick = (skill) => {
+//     fetchLearningPath(skill);
+//   };
+
+//   return (
+//     <div className="learning-path-dashboard hero-section">
+//       <div className="overlay"></div> {/* Gradient overlay */}
+//       <div className="content-left">
+//         <h1 className="title">Explore Your Learning Path</h1> {/* Main Heading */}
+
+//         {loading ? (
+//           <p className="loading">Fetching learning path...</p>
+//         ) : (
+//           <>
+//             {skillsGap.length > 0 ? (
+//               <div className="skills-grid">
+//                 {skillsGap.map((skill, index) => (
+//                   <button 
+//                     key={index} 
+//                     className="skill-button"
+//                     onClick={() => handleSkillClick(skill)} // Fetch learning path when clicked
+//                   >
+//                     {skill} {/* Only display the skill name */}
+//                   </button>
+//                 ))}
+//               </div>
+//             ) : (
+//               <p className="no-gap">No skills gap available.</p>
+//             )}
+//           </>
+//         )}
+
+//         {/* Display any error messages */}
+//         {error && <div className="error-message">{error}</div>}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LearningPathDashboard;
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useLocation, useNavigate } from 'react-router-dom'; 
 import './LearningPathDashboard.css';
 
 const LearningPathDashboard = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Initialize navigate
-  const { skillsGap = [] } = location.state || {};
-  const [learningPaths, setLearningPaths] = useState({}); // Store learning paths for each skill
+  const navigate = useNavigate(); 
+  const { skillsGap = [] } = location.state || {}; // Get skills gap from the previous page
+  const [loading, setLoading] = useState(false); // To show a loading indicator during the API call
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    console.log("Skills Gap: ", skillsGap); // Log skillsGap to check if it's populated
+  }, [skillsGap]);
+
   const fetchLearningPath = async (skill) => {
+    setLoading(true); // Set loading state when fetching starts
     try {
       console.log(`Fetching learning path for: ${skill}`);
       const response = await axios.post('http://127.0.0.1:5000/get-learning-path', {
@@ -294,56 +549,51 @@ const LearningPathDashboard = () => {
 
       console.log('API Response:', response.data);
 
-      // Navigate to the new page with resources in the state
-      navigate('/learning-resources', { state: { resources: response.data.resources || [] } });
+      // Navigate to the Learning Resources page with resources in the state
+      navigate('/learning-resources', { state: { skill, resources: response.data.resources || [] } });
     } catch (error) {
       setError(`Failed to fetch learning path for ${skill}`);
       console.error('API error:', error);
+    } finally {
+      setLoading(false); // Stop loading state
     }
   };
 
   const handleSkillClick = (skill) => {
-    // Check if the learning path is already fetched; if not, fetch it
-    if (!learningPaths[skill]) {
-      fetchLearningPath(skill);
-    }
+    fetchLearningPath(skill);
   };
 
   return (
-    <div className="learning-path-dashboard">
-      <h2>Learning Path Dashboard</h2>
+    <div className="learning-path-dashboard hero-section">
+      <div className="overlay"></div> {/* Gradient overlay */}
+      <div className="content-left">
+        <h1 className="main-title">Explore Your Learning Path</h1>
 
-      {skillsGap.length > 0 ? (
-        skillsGap.map((skill, index) => (
-          <div key={index} className="skill-section">
-            <div className="skill-header">
-              <span className="skill-name">{skill}</span>
-              <span className="skill-percentage">Learning path to follow</span>
-            </div>
-
-            <div className="learning-paths">
-              <h4>Suggested Learning Paths:</h4>
-              <ul>
-                <li>
-                  <a
-                    href={learningPaths[skill] || '#'} // Use fetched learning path or '#' while fetching
-                    target="_blank"
-                    rel="noopener noreferrer"
+        {loading ? (
+          <p className="loading">Fetching learning path...</p>
+        ) : (
+          <>
+            {skillsGap.length > 0 ? (
+              <div className="skills-grid">
+                {skillsGap.map((skill, index) => (
+                  <div 
+                    key={index} 
+                    className="skill-box"
                     onClick={() => handleSkillClick(skill)} // Fetch learning path when clicked
                   >
-                    {learningPaths[skill] ? `Learn ${skill} here` : `Fetch learning path for ${skill}`}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        ))
-      ) : (
-        <p>No skills gap available.</p>
-      )}
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="no-gap">No skills gap available.</p>
+            )}
+          </>
+        )}
 
-      {/* Display any error messages */}
-      {error && <div className="error-message">{error}</div>}
+        {/* Display any error messages */}
+        {error && <div className="error-message">{error}</div>}
+      </div>
     </div>
   );
 };

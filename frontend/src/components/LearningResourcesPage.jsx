@@ -1,8 +1,9 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const LearningResourcesPage = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // Use navigate for the back button
   const { resources = [] } = location.state || {}; // Get resources from navigation state
 
   return (
@@ -21,6 +22,11 @@ const LearningResourcesPage = () => {
       ) : (
         <p>No resources available.</p>
       )}
+
+      {/* Back Button to return to the Learning Path Dashboard */}
+      <button onClick={() => navigate(-1)} style={{ marginTop: '20px' }}>
+        Back to Learning Path Dashboard
+      </button>
     </div>
   );
 };
