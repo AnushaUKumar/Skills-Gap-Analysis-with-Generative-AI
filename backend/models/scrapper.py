@@ -393,11 +393,11 @@ class LinkedInJobScraper:
         # Start Chrome
         self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 
-    def random_sleep(self, min_time=3, max_time=7):
+    def random_sleep(self, min_time=8, max_time=12):
         """Introduce a random delay to mimic human behavior."""
         time.sleep(random.uniform(min_time, max_time))
 
-    def simulate_human_scroll(self, scroll_pause_min=2, scroll_pause_max=4):
+    def simulate_human_scroll(self, scroll_pause_min=5, scroll_pause_max=10):
         """Simulate human-like scrolling on the page."""
         self.driver.execute_script("window.scrollBy(0, 400);")
         self.random_sleep(scroll_pause_min, scroll_pause_max)
@@ -408,17 +408,17 @@ class LinkedInJobScraper:
         """Simulate human-like mouse movement to an element."""
         action = ActionChains(self.driver)
         action.move_to_element(element).perform()
-        self.random_sleep(2, 4)  # Pause after moving mouse
+        self.random_sleep(6, 10)  # Pause after moving mouse
 
     def login(self, email, password):
         """Login to LinkedIn using provided credentials."""
         self.driver.get('https://www.linkedin.com/login')
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "username"))).send_keys(email)
-        self.random_sleep(1, 3)
+        self.random_sleep(5, 8)
         self.driver.find_element(By.ID, "password").send_keys(password)
-        self.random_sleep(2, 4)  # Wait to simulate human typing delay
+        self.random_sleep(8, 12)  # Wait to simulate human typing delay
         self.driver.find_element(By.XPATH, '//button[@type="submit"]').click()
-        self.random_sleep(5, 8)  # Pause after login to avoid immediate requests
+        self.random_sleep(10, 20)  # Pause after login to avoid immediate requests
 
     def extract_job_description(self):
         """Extract the full job description, clicking 'See more' if necessary."""
@@ -426,7 +426,7 @@ class LinkedInJobScraper:
             see_more_button = self.driver.find_element(By.XPATH, '//button[@aria-label="Click to see more description"]')
             if see_more_button:
                 see_more_button.click()
-                self.random_sleep(2, 4)  # Wait for more content to load
+                self.random_sleep(7, 10)  # Wait for more content to load
         except Exception:
             pass  # 'See more' button might not exist for every job
 
@@ -439,7 +439,7 @@ class LinkedInJobScraper:
         job_descriptions = {}
         base_url = f"https://www.linkedin.com/jobs/search?keywords={role}&location={location}&f_TPR=r604800&f_LF=f_AL&start=0"
         self.driver.get(base_url)
-        self.random_sleep(5, 7)  # Allow page to fully load
+        self.random_sleep(16, 20)  # Allow page to fully load
         total_jobs_scraped = 0
 
         while total_jobs_scraped < job_limit:
@@ -452,7 +452,7 @@ class LinkedInJobScraper:
                     # Simulate human-like mouse movement before clicking
                     self.simulate_mouse_movement(job)
                     job.click()
-                    self.random_sleep(5, 7)
+                    self.random_sleep(7, 10)
 
                     # Extract job description
                     description = self.extract_job_description()
@@ -475,7 +475,7 @@ class LinkedInJobScraper:
                     # Simulate mouse movement before clicking the next button
                     self.simulate_mouse_movement(next_button)
                     next_button.click()
-                    self.random_sleep(5, 10)
+                    self.random_sleep(8, 12)
                 else:
                     break
             except Exception:

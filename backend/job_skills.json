@@ -1,1 +1,90 @@
-{}
+{
+    "job1": {
+        "skills": [
+            "Python 3",
+            "SQL",
+            "matplotlib",
+            "seaborn",
+            "tableau",
+            "pandas",
+            "numpy",
+            "scipy",
+            "Postgres",
+            "MySQL",
+            "SQL Server"
+        ],
+        "certifications": [],
+        "years_of_experience": "6+"
+    },
+    "job2": {
+        "skills": [
+            "Python",
+            "data mining",
+            "machine learning",
+            "statistics",
+            "Linux",
+            "Git",
+            "time-series databases"
+        ],
+        "certifications": [],
+        "years_of_experience": "0"
+    },
+    "job3": {
+        "skills": [
+            "Python",
+            "R",
+            "Azure ML",
+            "regression analysis",
+            "time series",
+            "probabilistic models",
+            "supervised classification",
+            "unsupervised learning"
+        ],
+        "certifications": [],
+        "years_of_experience": "2"
+    },
+    "job4": {
+        "skills": [
+            "Python",
+            "TensorFlow",
+            "PyTorch",
+            "data preprocessing",
+            "feature engineering",
+            "model deployment",
+            "NLP",
+            "AWS",
+            "GCP",
+            "Azure"
+        ],
+        "certifications": [],
+        "years_of_experience": "3+"
+    },
+    "job5": {
+        "skills": [
+            "GAAP",
+            "internal controls",
+            "Microsoft Office Suite",
+            "audit management software"
+        ],
+        "certifications": [],
+        "years_of_experience": "2-4"
+    },
+    "job6": {
+        "skills": [
+            "R",
+            "SQL",
+            "Python",
+            "Shiny",
+            "flexdashboard",
+            "shinydashboard",
+            "plotly",
+            "linear programming",
+            "constraint programming",
+            "Google's OR tools",
+            "Apache Airflow",
+            "Docker"
+        ],
+        "certifications": [],
+        "years_of_experience": "3"
+    }
+}
