@@ -1,41 +1,4 @@
 
-# from flask import Flask, request, jsonify
-# from flask_cors import CORS
-# from models.resume_text_extractor import extract_text
-# from models.resume_parser import extract_resume_with_llama  # Correct function import
-
-# app = Flask(__name__)
-# CORS(app)
-
-# @app.route('/parse_resume', methods=['POST'])
-# def parse_resume_api():
-#     """
-#     API endpoint to handle resume parsing.
-#     Supports PDF and DOCX file formats.
-#     """
-#     if 'resume' not in request.files:
-#         return jsonify({"error": "No resume file provided"}), 400
-    
-#     resume_file = request.files['resume']
-    
-#     try:
-#         # Extract text from the resume file
-#         resume_text = extract_text(resume_file)
-        
-#         if not resume_text.strip():
-#             return jsonify({"error": "Could not extract text from the resume. Please check the file format."}), 400
-
-#         # Parse the extracted text using LLaMA 3.1 via Ollama API
-#         parsed_data = extract_resume_with_llama(resume_text)
-        
-#         # Return parsed information (skills)
-#         return jsonify({"skills": parsed_data})
-    
-#     except ValueError as ve:
-#         return jsonify({"error": str(ve)}), 400
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from models.resume_text_extractor import extract_text
@@ -101,34 +64,6 @@ def analyze_description_api():
     except ValueError as ve:
         return jsonify({"error": str(ve)}), 400
 
-# @app.route('/scrape_jobs', methods=['POST'])
-# def scrape_jobs():
-#     data = request.json
-#     role = data.get('role', '').strip()
-#     location = data.get('location', '').strip()
-
-#     if not role or not location:
-#         return jsonify({"error": "Role and location are required."}), 400
-
-#     try:
-#         # LinkedIn credentials from environment variables
-#         email = os.getenv("LINKEDIN_EMAIL")
-#         password = os.getenv("LINKEDIN_PASSWORD")
-
-#         if not email or not password:
-#             return jsonify({"error": "LinkedIn credentials are not set in the environment variables."}), 400
-
-#         # Instantiate the scraper and login
-#         scraper = LinkedInScraper()
-#         scraper.login(email, password)
-
-#         # Scrape job descriptions
-#         job_descriptions = scraper.scrape_job_descriptions(role, location)
-#         return jsonify({"job_descriptions": job_descriptions})
-
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
-
 @app.route('/scrape_jobs', methods=['POST'])
 def scrape_jobs():
     """API endpoint to scrape job skills from LinkedIn based on the role and location."""
@@ -169,84 +104,7 @@ def scrape_jobs():
 # API URL for scraping jobs
 SCRAPE_JOBS_API_URL = "http://127.0.0.1:5000/scrape_jobs"
 
-# @app.route('/analyze_skills', methods=['POST'])
-# def analyze_skills():
-#     """API endpoint to analyze job skills and compare with user-provided skills."""
-#     data = request.json
-#     role = data.get('role', '').strip()  # Role coming from UI
-#     user_skills = data.get('user_skills', [])  # User skills from UI
 
-#     # Step 1: Call the scrape_jobs API to generate job_skills.json
-#     scrape_payload = {
-#         "role": role,
-#         "location": "New York"  # Hardcoded location
-#     }
-    
-#     scrape_response = requests.post(SCRAPE_JOBS_API_URL, json=scrape_payload)
-    
-#     if scrape_response.status_code != 200:
-#         return jsonify({"error": "Failed to scrape jobs data."}), 500
-
-#     # Step 2: Load the scraped job skills from the file
-#     if not os.path.exists('job_skills.json'):
-#         return jsonify({"error": "Job skills data not found. Please run the scraper first."}), 400
-
-#     with open('job_skills.json', 'r') as f:
-#         job_skills_data = json.load(f)
-
-#     # Step 3: Aggregate skills from the job descriptions
-#     common_skills, missing_skills = aggregate_skills(user_skills, job_skills_data)
-
-#     # Step 4: Call LLaMA to get recommendations on missing skills
-#     llama_recommendations = analyze_skills_with_llama(user_skills, missing_skills)
-
-#     # Step 5: Prepare the response with LLaMA recommendations
-#     response_data = {
-#         "common_skills": common_skills,
-#         "user_skills": user_skills,
-#         "missing_skills": missing_skills,
-#         "llama_recommendations": llama_recommendations
-#     }
-
-#     return jsonify(response_data)
-# @app.route('/analyze_skills', methods=['POST'])
-# def analyze_skills():
-#     """API endpoint to analyze job skills and compare with user-provided skills."""
-#     data = request.json
-#     role = data.get('role', '').strip()  # Role coming from UI
-#     user_skills = data.get('user_skills', [])  # User skills from UI
-
-#     # Step 1: Call the scrape_jobs API to generate job_skills.json
-#     scrape_payload = {
-#         "role": role,
-#         "location": "New York"  # Hardcoded location
-#     }
-    
-#     scrape_response = requests.post(SCRAPE_JOBS_API_URL, json=scrape_payload)
-    
-#     if scrape_response.status_code != 200:
-#         return jsonify({"error": "Failed to scrape jobs data."}), 500
-
-#     # Step 2: Load the scraped job skills from the file
-#     if not os.path.exists('job_skills.json'):
-#         return jsonify({"error": "Job skills data not found. Please run the scraper first."}), 400
-
-#     with open('job_skills.json', 'r') as f:
-#         job_skills_data = json.load(f)
-
-#     # Step 3: Aggregate skills from the job descriptions
-#     common_skills, missing_skills = aggregate_skills(user_skills, job_skills_data)
-
-#     # Step 4: Call LLaMA to get recommendations on missing skills
-#     llama_recommendations = analyze_skills_with_llama(user_skills, missing_skills)
-
-#     # Step 5: Prepare the response with LLaMA recommendations
-#     response_data = {
-#         "missing_skills": missing_skills,
-#         "llama_recommendations": llama_recommendations
-#     }
-
-#     return jsonify(response_data)
 @app.route('/analyze_skills', methods=['POST'])
 def analyze_skills():
     """API endpoint to analyze job skills and compare with user-provided skills."""
@@ -344,6 +202,19 @@ def analyze_curriculum():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/curriculum_plan')
+def get_curriculum_plan():
+    language = request.args.get('language')
+    if not language:
+        return jsonify({'error': 'Language parameter is required'}), 400
+
+    try:
+        # Use the instantiated google_search object to fetch the curriculum plan
+        curriculum_plan = google_search.get_curriculum_plan(language)
+        return jsonify(curriculum_plan)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

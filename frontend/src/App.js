@@ -38,7 +38,7 @@ import DashboardEducator from './components/DashboardEducator';
 import TargetRolePage from './components/TargetRolePage'; 
 import LearningPathDashboard from './components/LearningPathDashboard';
 import LearningResourcesPage from './components/LearningResourcesPage'; // Import Learning Resources Page
-
+import CurriculumPage from './components/CurriculumPage';
 function App() {
   return (
     <Router>
@@ -52,6 +52,7 @@ function App() {
         <Route path="/employer" element={<EmployerButton />} />
         <Route path="/learning-paths" element={<LearningPathDashboard />} />
         <Route path="/learning-resources" element={<LearningResourcesPage />} /> {/* Add route for the new Learning Resources Page */}
+        <Route path="/curriculum" element={<CurriculumPage />} />
       </Routes>
     </Router>
   );
