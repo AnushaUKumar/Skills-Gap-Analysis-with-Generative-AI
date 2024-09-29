@@ -95,9 +95,123 @@
 
 // export default JobSeekerFlow;
 
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
+// import "./JobSeekerFlow.css";
+
+// const JobSeekerFlow = () => {
+//   const [resume, setResume] = useState(null);
+//   const [description, setDescription] = useState('');
+//   const [loading, setLoading] = useState(false);
+//   const [message, setMessage] = useState('');
+//   const navigate = useNavigate();
+
+//   const handleResumeChange = (e) => {
+//     setResume(e.target.files[0]);
+//   };
+
+//   const handleDescriptionChange = (e) => {
+//     setDescription(e.target.value);
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setLoading(true);
+//     setMessage('');
+
+//     try {
+//       let parsedData;
+//       if (resume) {
+//         // API call for resume parsing
+//         const formData = new FormData();
+//         formData.append('resume', resume);
+
+//         const response = await axios.post('http://localhost:5000/parse_resume', formData, {
+//           headers: {
+//             'Content-Type': 'multipart/form-data',
+//           },
+//         });
+
+//         parsedData = response.data;
+//         console.log('Resume Parsing Result:', parsedData);
+
+//       } else if (description) {
+//         // API call for description analysis
+//         const response = await axios.post(
+//           'http://127.0.0.1:5000/analyze_description',
+//           { description },
+//           {
+//             headers: {
+//               'Content-Type': 'application/json',
+//             },
+//           }
+//         );
+
+//         parsedData = response.data;
+//         console.log('Description Analysis Result:', parsedData);
+//       } else {
+//         setMessage('Please upload a resume or enter a description.');
+//         alert('Please upload a resume or enter a description!');
+//         return;
+//       }
+
+//       // Check if parsed skills exist
+//       if (parsedData.skills) {
+//         // Navigate to the dashboard and pass skills to DashboardSeeker.jsx
+//         navigate('/job-seeker-dashboard', { state: { userSkills: parsedData.skills, targetRoleSkills: parsedData.targetRoleSkills || [] } });
+//       } else {
+//         setMessage('No skills found.');
+//       }
+      
+//     } catch (error) {
+//       console.error('Error submitting form:', error);
+//       setMessage(`Error occurred: ${error.message}`);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div className="job-seeker-flow-container">
+//   <h1>Job Seeker Flow</h1>
+//   <form onSubmit={handleSubmit}>
+//     <h3>Upload your resume</h3>
+//     <div className="file-input-container">
+//       <input type="file" onChange={handleResumeChange} />
+//     </div>
+
+//     <h3>Or tell about your past experiences</h3>
+//     <textarea
+//       placeholder="Describe your past experiences"
+//       value={description}
+//       onChange={handleDescriptionChange}
+//     />
+
+//     <button type="submit" disabled={loading}>
+//       {loading ? 'Submitting...' : 'Submit'}
+//     </button>
+//   </form>
+
+//   {message && (
+//     <div
+//       style={{
+//         marginTop: '20px',
+//         color: message.startsWith('Error') ? 'red' : 'green',
+//       }}
+//     >
+//       {message}
+//     </div>
+//   )}
+// </div>
+
+//   );
+// };
+
+// export default JobSeekerFlow;
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom'; // useLocation to receive targetRole
 import "./JobSeekerFlow.css";
 
 const JobSeekerFlow = () => {
@@ -106,6 +220,10 @@ const JobSeekerFlow = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+
+  // Retrieve the targetRole from location state (sent from TargetRolePage)
+  const location = useLocation();
+  const targetRole = location.state?.targetRole || ''; // Use targetRole from the previous step
 
   const handleResumeChange = (e) => {
     setResume(e.target.files[0]);
@@ -123,7 +241,7 @@ const JobSeekerFlow = () => {
     try {
       let parsedData;
       if (resume) {
-        // API call for resume parsing
+        // API call to parse the resume
         const formData = new FormData();
         formData.append('resume', resume);
 
@@ -137,7 +255,7 @@ const JobSeekerFlow = () => {
         console.log('Resume Parsing Result:', parsedData);
 
       } else if (description) {
-        // API call for description analysis
+        // API call to analyze the description
         const response = await axios.post(
           'http://127.0.0.1:5000/analyze_description',
           { description },
@@ -153,17 +271,24 @@ const JobSeekerFlow = () => {
       } else {
         setMessage('Please upload a resume or enter a description.');
         alert('Please upload a resume or enter a description!');
+        setLoading(false);
         return;
       }
 
-      // Check if parsed skills exist
+      // Check if parsed skills are available
       if (parsedData.skills) {
-        // Navigate to the dashboard and pass skills to DashboardSeeker.jsx
-        navigate('/job-seeker-dashboard', { state: { userSkills: parsedData.skills, targetRoleSkills: parsedData.targetRoleSkills || [] } });
+        // Navigate to the DashboardSeeker page, pass user skills and targetRole
+        navigate('/job-seeker-dashboard', { 
+          state: { 
+            userSkills: parsedData.skills, 
+            targetRole: targetRole, // Pass targetRole to the next page
+            targetRoleSkills: parsedData.targetRoleSkills || [] 
+          } 
+        });
       } else {
         setMessage('No skills found.');
       }
-      
+
     } catch (error) {
       console.error('Error submitting form:', error);
       setMessage(`Error occurred: ${error.message}`);
@@ -174,37 +299,36 @@ const JobSeekerFlow = () => {
 
   return (
     <div className="job-seeker-flow-container">
-  <h1>Job Seeker Flow</h1>
-  <form onSubmit={handleSubmit}>
-    <h3>Upload your resume</h3>
-    <div className="file-input-container">
-      <input type="file" onChange={handleResumeChange} />
+      <h1>Job Seeker Flow</h1>
+      <form onSubmit={handleSubmit}>
+        <h3>Upload your resume</h3>
+        <div className="file-input-container">
+          <input type="file" onChange={handleResumeChange} />
+        </div>
+
+        <h3>Or tell about your past experiences</h3>
+        <textarea
+          placeholder="Describe your past experiences"
+          value={description}
+          onChange={handleDescriptionChange}
+        />
+
+        <button type="submit" disabled={loading}>
+          {loading ? 'Submitting...' : 'Submit'}
+        </button>
+      </form>
+
+      {message && (
+        <div
+          style={{
+            marginTop: '20px',
+            color: message.startsWith('Error') ? 'red' : 'green',
+          }}
+        >
+          {message}
+        </div>
+      )}
     </div>
-
-    <h3>Or tell about your past experiences</h3>
-    <textarea
-      placeholder="Describe your past experiences"
-      value={description}
-      onChange={handleDescriptionChange}
-    />
-
-    <button type="submit" disabled={loading}>
-      {loading ? 'Submitting...' : 'Submit'}
-    </button>
-  </form>
-
-  {message && (
-    <div
-      style={{
-        marginTop: '20px',
-        color: message.startsWith('Error') ? 'red' : 'green',
-      }}
-    >
-      {message}
-    </div>
-  )}
-</div>
-
   );
 };
 
