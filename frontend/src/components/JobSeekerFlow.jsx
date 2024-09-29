@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { parseResume, generateCareerPath } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 const JobSeekerFlow = () => {
   const [resume, setResume] = useState(null);
   const [description, setDescription] = useState('');
-  const [skills, setSkills] = useState([]);
-  const [careerPath, setCareerPath] = useState('');
+  const navigate = useNavigate(); // For navigation
 
   const handleResumeChange = (e) => {
     setResume(e.target.files[0]);
@@ -16,37 +15,37 @@ const JobSeekerFlow = () => {
   };
 
   const handleSubmit = async () => {
-    try {
-      const skillsResponse = await parseResume(resume);
-      setSkills(skillsResponse.data.skills);
+    let userSkills = [];
+    let targetRoleSkills = ["SQL", "Python", "Data Visualization", "Machine Learning", "Excel"]; // Mock target role skills
 
-      const pathResponse = await generateCareerPath(description);
-      setCareerPath(pathResponse.data.career_path);
-    } catch (err) {
-      console.error(err);
+    // Mock backend logic to extract skills
+    if (resume) {
+      // Simulate extracting skills from resume
+      userSkills = ["Excel", "Communication", "Leadership", "Time Management"];
+    } else if (description) {
+      // Simulate extracting skills from description
+      userSkills = ["Leadership", "Communication", "Negotiation"];
     }
+
+    // Mock navigation to Dashboard with extracted skills and target role skills
+    navigate('/job-seeker-dashboard', {
+      state: {
+        userSkills,
+        targetRoleSkills
+      }
+    });
   };
 
   return (
     <div>
       <h1>Job Seeker Flow</h1>
       <input type="file" onChange={handleResumeChange} />
-      <textarea placeholder="Describe your ideal job role" onChange={handleDescriptionChange} />
+      <textarea
+        placeholder="Describe your past experiences"
+        onChange={handleDescriptionChange}
+        value={description}
+      />
       <button onClick={handleSubmit}>Submit</button>
-
-      <div>
-        <h2>Extracted Skills</h2>
-        <ul>
-          {skills.map((skill, index) => (
-            <li key={index}>{skill}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h2>Career Path</h2>
-        <p>{careerPath}</p>
-      </div>
     </div>
   );
 };

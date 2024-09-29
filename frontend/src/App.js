@@ -15,6 +15,7 @@ function App() {
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/job-seeker" element={<TargetRolePage />} /> {/* New route */}
         <Route path="/job-seeker-dashboard" element={<DashboardSeeker />} />
+        <Route path="/job-seeker-flow" element={<JobSeekerFlow />} />
         <Route path="/educator" element={<EducatorFlow />} />
         <Route path="/educator-dashboard" element={<DashboardEducator />} />
       </Routes>

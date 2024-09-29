@@ -1,16 +1,112 @@
-.landing-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .button-container {
-    margin-top: 20px;
-  }
-  
-  .option-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9; /* Fallback background */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url('/discussion.jpg'); /* Ensure your image path is correct */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Center-aligns the content */
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Gradient Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0, 34, 102, 0.8), rgba(0, 102, 153, 0.6)); /* Subtle gradient */
+}
+
+/* Content Styling */
+.content-left {
+  z-index: 1;
+  color: white;
+  max-width: 900px; /* Make it wider so the text stretches horizontally */
+}
+
+.content-right {
+  z-index: 1;
+  color: white; /* This ensures that the text on the right is white */
+  max-width: 550px;
+  text-align: right;
+}
+
+h1 {
+  font-size: 3.7rem; /* Font size to match the larger, single-line text */
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for better readability */
+}
+
+.bold-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+  display: inline; /* Ensure both texts are on the same line */
+}
+
+.script-text {
+  font-family: 'Great Vibes', cursive;
+  color: #64d6c2; /* Light blue color */
+  display: inline; /* Ensure this stays on the same line */
+}
+
+p {
+  font-size: 1.3rem; /* Adjusted font size for paragraph */
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: white; /* Ensure the paragraph text is white */
+}
+/* Button Style */
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end; /* Aligns the buttons to the right */
+}
+
+.cta-button {
+  background-color: #2F80ED;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: #1f5bbf;
+}
+
+/* Specific Button Styles (optional) */
+.educator-button {
+  background-color: #64d6c2; /* Different color for educator button */
+}
+
+.jobseeker-button {
+  background-color: #64d6c2; /* Different color for job seeker button */
+}
+
+.employer-button {
+  background-color: #64d6c2; /* Different color for employer button */
+}
+

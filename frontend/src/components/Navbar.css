@@ -1,0 +1,68 @@
+/* Navigation bar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* Make it transparent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100; /* Ensure it stays on top of other content */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Logo Styles */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    height: 40px; /* Adjust as needed */
+  }
+  
+  /* Navigation Links */
+  .nav-links ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links ul li {
+    margin: 0 15px;
+  }
+  
+  .nav-links ul li a {
+    color: white; /* Ensure navigation links are white */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .nav-links ul li a:hover {
+    color: #64d6c2; /* Hover effect for links */
+  }
+  
+  /* Contact Button */
+  .contact-button .btn {
+    background-color: #2F80ED;
+    color: white; /* Button text white */
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button .btn:hover {
+    background-color: #1f5bbf;
+  }
+  
