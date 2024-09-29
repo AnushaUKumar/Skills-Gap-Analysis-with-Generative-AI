@@ -1,124 +1,160 @@
 /* Background image applied only to the Educator Dashboard page */
 .dashboard-educator-page {
-  font-family: 'Montserrat', sans-serif;
-  background-image: url('/discussion.jpg'); /* Add your background image path */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  box-sizing: border-box; /* Ensure padding is included in the width */
-}
-
-/* Overall dashboard container */
-.dashboard-educator-container {
-  padding: 40px;
-  max-width: 1200px;
-  width: 100%; /* Take up full width */
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Main header */
-.dashboard-header {
-  text-align: center;
-  color: #1f5bbf;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: bold;
-  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2); /* Text shadow for readability */
-}
-
-/* Content section: flex layout */
-.dashboard-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100%; /* Ensure it spans full width */
-  box-sizing: border-box; /* Ensure padding is respected */
-}
-
-/* Individual cards for sections */
-.dashboard-card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  width: 48%;
-  min-width: 400px;
-}
-
-/* Analysed Data */
-.analysed-data {
-  background-color: #fdfdfd;
-}
-
-/* Skills list container */
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-/* Skill tags */
-.skill-tag {
-  background-color: #1e88e5;
-  color: rgb(16, 16, 16);
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.skill-tag:hover {
-  background-color: #1565c0;
-}
-
-/* Job Suggestions styling */
-.job-suggestions h4 {
-  color: #1f5bbf;
-  margin-bottom: 10px;
-}
-
-/* Individual suggestion item */
-.suggestion-item {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: rgba(220, 240, 255, 1);
-  border-left: 4px solid #1e88e5;
-  border-radius: 10px;
-  color: #333;
-}
-
-/* Missing skills tags */
-.missing-skill-tag {
-  background-color: #ffeb3b;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-/* Responsive Styling */
-@media screen and (max-width: 768px) {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('/discussion.jpg'); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  
+  /* Overall dashboard container */
   .dashboard-educator-container {
-    padding: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%; /* Take up full width */
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-
+  
+  /* Main header */
+  .dashboard-header {
+    text-align: center;
+    color: #1f5bbf;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2); /* Text shadow for readability */
+  }
+  
+  /* Content section: flex layout */
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%; /* Ensure it spans full width */
+    box-sizing: border-box; /* Ensure padding is respected */
+  }
+  
+  /* Individual cards for sections */
   .dashboard-card {
-    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 48%;
+    min-width: 400px;
   }
-}
+  
+  /* Analysed Data */
+  .analysed-data {
+    background-color: #fdfdfd;
+  }
+  
+  /* Skills list container */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Skill tags */
+  .skill-tag {
+    background-color: #1e88e5;
+    color: white; /* Ensure the text is white for contrast */
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Job Suggestions styling */
+  .job-suggestions h3 {
+    color: #1f5bbf; /* Dark blue for readability */
+    margin-bottom: 15px;
+  }
+  
+  .job-suggestions h4 {
+    color: #1f5bbf; /* Dark blue for readability */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Individual suggestion item */
+  .suggestion-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(220, 240, 255, 1); /* Light background for contrast */
+    border-left: 4px solid #1e88e5;
+    border-radius: 10px;
+    color: #333; /* Ensure visible text */
+  }
+  
+  /* Missing skills section */
+  .missing-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Missing Skills heading */
+  .missing-skills-label {
+    font-weight: bold;
+    color: #333; /* Ensure visibility */
+    margin-bottom: 10px;
+  }
+  
+  /* Missing skills tags */
+  .missing-skill-tag {
+    background-color: #ff9800; /* Changed to a more visible orange color */
+    color: white; /* White text for good contrast */
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  /* Suggestion text styling */
+  .suggestion-text {
+    color: #333; /* Dark color to ensure readability */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Responsive Styling */
+  @media screen and (max-width: 768px) {
+    .dashboard-educator-container {
+      padding: 20px;
+    }
+  
+    .dashboard-card {
+      width: 100%;
+    }
+  }
+  

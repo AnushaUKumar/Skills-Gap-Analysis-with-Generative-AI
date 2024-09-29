@@ -47,7 +47,7 @@
 //   }
 
 //   return (
-//     <div className="dashboard-educator-page"> {/* Added unique class for background image */}
+//     <div className="dashboard-educator-page">
 //       <div className="dashboard-educator-container">
 //         <h2 className="dashboard-header">Educator Dashboard</h2>
 
@@ -64,35 +64,31 @@
 //               ))}
 //             </div>
 //           </div>
+
+//           {/* Right Section for Job Suggestions */}
+//           <div className="dashboard-card job-suggestions">
+//             <h3>Job Suggestions</h3>
+//             {recommendations.suggestions.map((jobSuggestion, index) => (
+//               <div key={index} className="suggestion-item" onClick={() => handleJobClick(jobSuggestion)}>
+//                 <h4>Job: {jobSuggestion.job}</h4>
+//                 <p><strong>Missing Skills:</strong></p>
+//                 <div className="missing-skills">
+//                   {jobSuggestion.missing_skills.map((skill, skillIndex) => (
+//                     <span key={skillIndex} className="missing-skill-tag">
+//                       {skill}
+//                     </span>
+//                   ))}
+//                 </div>
+//                 <p><strong>Suggestion:</strong> {jobSuggestion.suggestion}</p>
+//               </div>
+//             ))}
+//           </div>
 //         </div>
 
 //         {/* Loading/Error Section */}
 //         {loading && <p>Loading curriculum...</p>}
 //         {error && <p className="error-message">{error}</p>}
-
-//         {/* Right Section for Job Suggestions */}
-//         <div className="dashboard-card job-suggestions">
-//           <h3>Job Suggestions</h3>
-//           {recommendations.suggestions.map((jobSuggestion, index) => (
-//             <div key={index} className="suggestion-item" onClick={() => handleJobClick(jobSuggestion)}>
-//               <h4>Job: {jobSuggestion.job}</h4>
-//               <p><strong>Missing Skills:</strong></p>
-//               <div className="missing-skills">
-//                 {jobSuggestion.missing_skills.map((skill, skillIndex) => (
-//                   <span key={skillIndex} className="missing-skill-tag">
-//                     {skill}
-//                   </span>
-//                 ))}
-//               </div>
-//               <p><strong>Suggestion:</strong> {jobSuggestion.suggestion}</p>
-//             </div>
-//           ))}
-//         </div>
 //       </div>
-
-//       {/* Loading/Error Section */}
-//       {loading && <p>Loading curriculum...</p>}
-//       {error && <p className="error-message">{error}</p>}
 //     </div>
 //   );
 // };
@@ -170,7 +166,7 @@ const DashboardEducator = () => {
             {recommendations.suggestions.map((jobSuggestion, index) => (
               <div key={index} className="suggestion-item" onClick={() => handleJobClick(jobSuggestion)}>
                 <h4>Job: {jobSuggestion.job}</h4>
-                <p><strong>Missing Skills:</strong></p>
+                <p className="missing-skills-label"><strong>Missing Skills:</strong></p>
                 <div className="missing-skills">
                   {jobSuggestion.missing_skills.map((skill, skillIndex) => (
                     <span key={skillIndex} className="missing-skill-tag">
@@ -178,7 +174,7 @@ const DashboardEducator = () => {
                     </span>
                   ))}
                 </div>
-                <p><strong>Suggestion:</strong> {jobSuggestion.suggestion}</p>
+                <p className="suggestion-text"><strong>Suggestion:</strong> {jobSuggestion.suggestion}</p>
               </div>
             ))}
           </div>
