@@ -19,7 +19,7 @@
   max-width: 1200px;
   width: 100%; /* Take up full width */
   margin: 0 auto;
-  background-color:none; /* Transparent background */
+  background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -74,7 +74,7 @@
 /* Skill tags */
 .skill-tag {
   background-color: #1e88e5;
-  color: white;
+  color: rgb(16, 16, 16);
   padding: 8px 12px;
   border-radius: 20px;
   font-size: 1rem;
@@ -116,96 +116,9 @@
 @media screen and (max-width: 768px) {
   .dashboard-educator-container {
     padding: 20px;
+  }
 
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    width: 48%;
-    min-width: 400px;
-    cursor: pointer;  /* Make job cards clickable */
-  }
-  
-  .dashboard-card:hover {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);  /* Add hover effect */
-  }
-  
-  /* Skills list container */
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  /* Skill tags */
-  .skill-tag {
-    background-color: #1e88e5;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .skill-tag:hover {
-    background-color: #1565c0;
-  }
-  
-  /* Job Suggestions styling */
-  .job-suggestions h4 {
-    color: #2f80ed;
-    margin-bottom: 10px;
-  }
-  
-  /* Individual suggestion item */
-  .suggestion-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f4faff;
-    border-left: 4px solid #1e88e5;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .suggestion-item:hover {
-    background-color: #e0f4ff;
-    cursor: pointer;
-  }
-  
-  /* Missing skills list */
-  .missing-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-  
-  /* Missing skill tags */
-  .missing-skill-tag {
-    background-color: #ffeb3b;
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  
-  /* Curriculum section */
-  .curriculum-section {
-    margin-top: 30px;
-  }
-  
-  .curriculum-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .curriculum-section li {
-    margin-bottom: 15px;
-  }
-  
-  .error-message {
-    color: red;
-    font-weight: bold;
+  .dashboard-card {
+    width: 100%;
   }
 }
