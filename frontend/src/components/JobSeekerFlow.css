@@ -1,5 +1,4 @@
-/* Job Seeker Flow Styles */
-.job-seeker-flow {
+.job-seeker-flow-container {
     background: linear-gradient(135deg, rgba(36, 61, 93, 0.7) 0%, rgba(71, 154, 189, 0.6) 100%, rgba(107, 171, 188, 0.7) 100%), 
                 url('/discussion.jpg'); /* Replace with your actual image path */
     background-size: cover;
@@ -9,76 +8,79 @@
     text-align: center;
     min-height: 100vh;
     margin: 0 auto; /* Center align */
-    text-align: center; /* Center text */
-  }
-  
-  /* Align file input to the right */
-  .file-input-container {
-    display: flex;
-    justify-content: flex-end; /* Aligns the file input to the right */
-  }
-  
-  /* Input Fields */
-  input[type="file"], 
-  input[type="text"], 
-  button {
-    width: 100%; /* Make buttons and input fields full-width */
-    margin: 10px 0; /* Space above and below elements */
+}
+
+/* Input and Textarea inside the container */
+.job-seeker-flow-container .file-input-container,
+.job-seeker-flow-container input[type="file"],
+.job-seeker-flow-container textarea,
+.job-seeker-flow-container button {
+    width: 50%; /* Reduce the width of input elements */
+    margin: 10px auto; /* Center align */
     padding: 12px;
-    border-radius: 30px; /* Rounded corners */
-    border: 1px solid #ccc; /* Border color */
-  }
-  
-  /* Specific Styling for Textarea */
-  textarea {
-    width: 100%;
-    height: 100px; /* Increase height for better visibility */
     border-radius: 30px;
     border: 1px solid #ccc;
-    padding: 10px; /* Padding for text area */
-  }
-  
-  /* Button Styles */
-  button {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better appearance */
+}
+
+/* File Input Container */
+.job-seeker-flow-container .file-input-container {
+    display: flex;
+    justify-content: center; /* Center the file input */
+    background: none; /* Ensure no additional background */
+    border: none; /* Remove any unnecessary border */
+    margin-bottom: 20px;
+}
+
+/* Specific File Input Style */
+.job-seeker-flow-container input[type="file"] {
+    width: 100%; /* Ensure file input takes the full width of the container */
+    border: 1px solid #2F80ED;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    outline: none; /* Remove default outline */
+}
+
+.job-seeker-flow-container input[type="file"]:hover {
+    background-color: #f0f8ff;
+}
+
+/* Textarea specific styles */
+.job-seeker-flow-container textarea {
+    height: 100px;
+    padding: 10px;
+    width: 100%; /* Ensure textarea takes the full width */
+}
+
+/* Button Styling */
+.job-seeker-flow-container button {
     background-color: #2F80ED;
     color: white;
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #1f5bbf; /* Change color on hover */
-  }
-  
-  /* Heading Styles */
-  h1 {
-    font-size: 2.5rem; /* Font size for the heading */
-    color: #2F80ED; /* Color for heading */
-  }
-  
-  h3 {
-    font-size: 1.5rem; /* Font size for the subheading */
-    color: #64d6c2; /* Color for the subheading */
-    margin-bottom: 20px; /* Spacing below heading */
-  }
-  /* File Input Style */
-  /* File Input Container */
- .file-input-container {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: flex-end; /* Aligns the file input to the right */
-  margin-bottom: 20px; /* Adds space below the file input */
+    margin: 20px auto;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
 }
 
-/* File Input Style */
- input[type="file"] {
-  padding: 10px 15px; /* Padding for the button */
-  border-radius: 30px; /* Rounded corners */
-  border: 1px solid #2F80ED; /* Border color */
-  background-color: white; /* Background color */
-  cursor: pointer; /* Pointer on hover */
-  transition: background-color 0.3s ease; /* Transition for hover effect */
-  font-size: 1rem; /* Font size */
+.job-seeker-flow-container button:hover {
+    background-color: #1f5bbf;
 }
 
- input[type="file"]:hover {
-  background-color: #f0f8ff; /* Light background on hover */
+/* Heading Styling */
+.job-seeker-flow-container h1 {
+    font-size: 2.5rem;
+    color: #2F80ED;
+}
+
+.job-seeker-flow-container h3 {
+    font-size: 1.5rem;
+    color: #64d6c2;
+    margin-bottom: 20px;
 }

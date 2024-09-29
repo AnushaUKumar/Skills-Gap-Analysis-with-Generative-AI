@@ -173,37 +173,38 @@ const JobSeekerFlow = () => {
   };
 
   return (
-    <div className="job-seeker-flow">
-      <h1>Job Seeker Flow</h1>
-      <form onSubmit={handleSubmit}>
-        <h3>Upload your resume</h3>
-        <div className="file-input-container">
-          <input type="file" onChange={handleResumeChange} />
-        </div>
-
-        <h3>Or tell about your past experiences</h3>
-        <textarea
-          placeholder="Describe your past experiences"
-          value={description}
-          onChange={handleDescriptionChange}
-        />
-
-        <button type="submit" disabled={loading}>
-          {loading ? 'Submitting...' : 'Submit'}
-        </button>
-      </form>
-
-      {message && (
-        <div
-          style={{
-            marginTop: '20px',
-            color: message.startsWith('Error') ? 'red' : 'green',
-          }}
-        >
-          {message}
-        </div>
-      )}
+    <div className="job-seeker-flow-container">
+  <h1>Job Seeker Flow</h1>
+  <form onSubmit={handleSubmit}>
+    <h3>Upload your resume</h3>
+    <div className="file-input-container">
+      <input type="file" onChange={handleResumeChange} />
     </div>
+
+    <h3>Or tell about your past experiences</h3>
+    <textarea
+      placeholder="Describe your past experiences"
+      value={description}
+      onChange={handleDescriptionChange}
+    />
+
+    <button type="submit" disabled={loading}>
+      {loading ? 'Submitting...' : 'Submit'}
+    </button>
+  </form>
+
+  {message && (
+    <div
+      style={{
+        marginTop: '20px',
+        color: message.startsWith('Error') ? 'red' : 'green',
+      }}
+    >
+      {message}
+    </div>
+  )}
+</div>
+
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import EmployerButton from './components/EmployerButton'; 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import JobSeekerFlow from './components/JobSeekerFlow';
@@ -18,6 +18,8 @@ function App() {
         <Route path="/job-seeker-flow" element={<JobSeekerFlow />} />
         <Route path="/educator" element={<EducatorFlow />} />
         <Route path="/educator-dashboard" element={<DashboardEducator />} />
+        <Route path="/employer" element={<EmployerButton />} /> {/* Add new route for Employer */}
+      
       </Routes>
     </Router>
   );

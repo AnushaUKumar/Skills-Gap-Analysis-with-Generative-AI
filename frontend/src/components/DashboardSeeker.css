@@ -1,98 +1,136 @@
-/* Dashboard Styles */
+/* Container for the dashboard section */
 .dashboard-section {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto; /* Center align */
-    text-align: center; /* Center text */
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9fc; /* Light background */
+    min-height: 100vh;
   }
   
-  /* Headings */
-  h2 {
+  /* Main Heading Style */
+  .dashboard-section h2 {
     font-size: 2.5rem;
-    color: #2F80ED; /* Primary color */
+    color: #2F80ED;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  /* Subheading Styles */
+  .dashboard-section h3 {
+    font-size: 1.75rem;
+    color: #64d6c2;
     margin-bottom: 20px;
+    font-weight: 500;
   }
   
-  h3 {
-    font-size: 2rem;
-    color: #64d6c2; /* Light blue color */
-    margin-bottom: 15px;
-  }
-  
-  /* Your Skills Section */
-  .skill-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #e7f3ff; /* Light background */
-    border: 1px solid #0073e6; /* Border color */
-    border-radius: 30px;
-    padding: 5px 15px;
+  /* Skill Button Styling */
+.skill-button {
+    display: inline-flex; /* Ensure inline-flex for proper alignment */
+    align-items: center; /* Center the text and the button vertically */
+    background-color: white;
+    border: 1px solid #2F80ED;
+    border-radius: 20px;
+    padding: 5px 10px;
     margin: 5px;
-    color: #0073e6; /* Text color */
-    font-size: 1rem; /* Font size for skills */
-    cursor: pointer;
+    font-size: 1rem;
+    color: #2F80ED;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* So that the button can be positioned properly */
   }
   
+  /* Cross Button Styling */
   .skill-button button {
-    margin-left: 5px;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: red;
+    font-weight: bold;
+    margin-left: 5px; /* Smaller margin to move the cross closer */
+    cursor: pointer;
+    font-size: 1.2rem; /* Slightly larger for better visibility */
+    padding: 0; /* Remove padding around the button */
+    line-height: 1; /* Remove line height padding */
+    display: inline-block; /* Make sure it behaves like a text element */
+  }
+  
+  /* Add Hover Effect for Removal */
+  .skill-button button:hover {
+    color: darkred;
+  }
+  
+  .skill-button:hover {
+    background-color: #e0e8f5; /* Lighter hover effect */
+  }
+  
+  /* Positioning the cancel (x) button */
+  .skill-button button {
     background: none;
     border: none;
-    color: #ff4d4d; /* Red color for the remove button */
+    color: #ff5c5c; /* Red color for close button */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 8px;
     cursor: pointer;
-    font-size: 1.2em; /* Larger font for the remove button */
+    outline: none;
   }
   
-  /* Input Field */
-  input[type="text"] {
+  
+  
+  /* Input Field Styling */
+  .dashboard-section input[type="text"] {
+    width: 50%; /* Adjust to control the width */
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 30px;
-    width: 300px; /* Shortened width */
-    margin-top: 10px;
-    margin-bottom: 20px; /* Space between input and next button */
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    outline: none;
   }
   
-  /* Button Styles */
+  /* Button Styling */
   .cta-button {
     background-color: #2F80ED;
     color: white;
-    padding: 12px 25px;
-    font-size: 1.2rem;
     border: none;
+    padding: 12px 30px;
     border-radius: 30px;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Button shadow */
   }
   
   .cta-button:hover {
     background-color: #1f5bbf;
-    transform: scale(1.05); /* Slightly enlarge on hover */
   }
   
-  /* Skills Gap Section */
+  /* Skills Gap section */
   .skills-gap {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #ffffff; /* White background for contrast */
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 40px;
   }
   
-  /* Skills Gap Skills */
+  .skills-gap h3 {
+    font-size: 1.75rem;
+    color: #64d6c2;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
   .skills-gap span {
     display: inline-block;
-    background-color: #e7f3ff; /* Light background for skills gap */
-    border-radius: 30px;
-    padding: 10px 15px; /* Adjust padding for a larger look */
-    margin: 5px; /* Space between skills */
-    color: #0073e6; /* Text color */
-    font-size: 1rem; /* Font size for skills */
+    background-color: #e7f4fc; /* Light blue background for skills gap tags */
+    color: #2F80ED;
+    border-radius: 25px;
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 1rem;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .skill-button {
-      flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    }
+  /* Align the skill input and buttons centrally */
+  .dashboard-section input[type="text"], 
+  .dashboard-section .cta-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
+  
