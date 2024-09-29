@@ -1,66 +1,98 @@
-/* Container for the dashboard section */
-.dashboard-section {
+/* Overall dashboard container */
+.dashboard-container {
     padding: 40px;
-    text-align: center;
-    background: #f5f7fa;
-    min-height: 100vh;
+    max-width: 1200px;
     margin: 0 auto;
-    box-sizing: border-box;
+    background-color: #e9f1f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
-  /* Main Heading Style */
-  .dashboard-section h2 {
+  /* Main header */
+  .dashboard-header {
+    text-align: center;
+    color: #1f5bbf;
     font-size: 2.5rem;
-    color: #2f80ed;
     margin-bottom: 40px;
     font-weight: bold;
   }
   
-  /* Subheading Styles */
-  .dashboard-section h3 {
-    font-size: 1.75rem;
-    color: #64d6c2;
-    margin-bottom: 20px;
-    font-weight: 500;
+  /* Content section: flex layout */
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   
-  /* Skill Button Styling */
-  .skill-button {
-    display: inline-flex;
-    align-items: center;
+  /* Individual cards for sections */
+  .dashboard-card {
     background-color: white;
-    border: 1px solid #2f80ed;
-    border-radius: 20px;
-    padding: 5px 10px;
-    margin: 5px;
-    font-size: 1rem;
-    color: #2f80ed;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Skills Gap section */
-  .skills-gap {
-    margin-top: 20px;
-  }
-  
-  /* Skill Gap Chip */
-  .skill-gap {
-    display: inline-block;
-    background-color: #e7f4fc;
-    color: #2f80ed;
-    border-radius: 25px;
-    padding: 8px 15px;
-    margin: 5px;
-    font-size: 1rem;
-  }
-  
-  /* Suggestion Card Styling */
-  .suggestion-card {
-    border: 1px solid #ddd;
     padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 48%;
+    min-width: 400px;
+  }
+  
+  /* Analysed Data */
+  .analysed-data {
+    background-color: #fdfdfd;
+  }
+  
+  /* Skills list container */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Skill tags */
+  .skill-tag {
+    background-color: #1e88e5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Job Suggestions styling */
+  .job-suggestions h4 {
+    color: #2f80ed;
+    margin-bottom: 10px;
+  }
+  
+  /* Individual suggestion item */
+  .suggestion-item {
     margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f4faff;
+    border-left: 4px solid #1e88e5;
     border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Missing skills list */
+  .missing-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Missing skill tags */
+  .missing-skill-tag {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
   
