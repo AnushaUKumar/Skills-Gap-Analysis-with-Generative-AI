@@ -102,7 +102,7 @@ p {
 button {
     margin-top: 20px;
     padding: 12px 30px;
-    background-color: #ef233c; /* Red button */
+    background-color: #67d2d3; /* Red button */
     color: white;
     border: none;
     border-radius: 8px;
@@ -112,7 +112,7 @@ button {
 }
 
 button:hover {
-    background-color: #d90429;
+    background-color: #6ad0df;
 }
 
 /* Ensure consistent padding for different screen sizes */
@@ -135,32 +135,35 @@ button:hover {
 /* Button Styles */
 button {
     padding: 12px 30px;
-    background-color: #ef233c; /* Red button */
+    background-color: #59beb6; /* Red button */
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin-left:80px;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #d90429;
+    background-color: #7ecdd3;
 }
 
 /* Button Container */
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between buttons */
+    gap: 100px;  /* Space between buttons */
     margin-top: 20px;
+  
 }
 
 /* Next Button Styles */
 .next-button {
-    background-color: #28a745; /* Green color for next button */
+    background-color:  #59beb6; 
+    margin-right: 40px;/* Green color for next button */
 }
 
 .next-button:hover {
-    background-color: #218838;
+    background-color: #7cc9ce;
 }
