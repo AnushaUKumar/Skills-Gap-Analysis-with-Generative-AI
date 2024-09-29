@@ -1,0 +1,65 @@
+/* Container for the Educator Flow Page */
+.educator-flow-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Main Heading */
+  .educator-flow-container h1 {
+    color: #2f80ed;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  .educator-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Curriculum Input Field */
+  .curriculum-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    background-color: #5bd8dc;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .submit-button:hover:not(:disabled) {
+    background-color: #1f5bbf;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    margin-top: 20px;
+    color: red;
+    font-size: 1.2rem;
+  }
+  

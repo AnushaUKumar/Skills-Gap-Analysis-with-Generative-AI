@@ -1,0 +1,66 @@
+/* Container for the dashboard section */
+.dashboard-section {
+    padding: 40px;
+    text-align: center;
+    background: #f5f7fa;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* Main Heading Style */
+  .dashboard-section h2 {
+    font-size: 2.5rem;
+    color: #2f80ed;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  /* Subheading Styles */
+  .dashboard-section h3 {
+    font-size: 1.75rem;
+    color: #64d6c2;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  /* Skill Button Styling */
+  .skill-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #2f80ed;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 1rem;
+    color: #2f80ed;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Skills Gap section */
+  .skills-gap {
+    margin-top: 20px;
+  }
+  
+  /* Skill Gap Chip */
+  .skill-gap {
+    display: inline-block;
+    background-color: #e7f4fc;
+    color: #2f80ed;
+    border-radius: 25px;
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Suggestion Card Styling */
+  .suggestion-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
