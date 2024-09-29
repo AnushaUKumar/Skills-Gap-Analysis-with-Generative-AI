@@ -44,13 +44,16 @@ from models.description_analyzer import analyze_text_with_llama
 from models.scrapper import LinkedInJobScraper
 from models.ectract_skills import process_job_descriptions
 from models.skills_analyzer import analyze_skills_with_llama,aggregate_skills
-import os
+from models.google_api import GoogleSearchAPI
 import requests
+import os
 import json
+from dotenv import load_dotenv
+from models.educator_gap import analyze_and_suggest
 
 app = Flask(__name__)
 CORS(app)
-
+load_dotenv()
 @app.route('/parse_resume', methods=['POST'])
 def parse_resume_api():
     """
@@ -284,7 +287,64 @@ def analyze_skills():
 
     return jsonify(response_data)
 
-    
+
+CSE_ID=os.getenv("CSE_ID")
+GOOGLE_API_KEY=os.getenv("Google_api_key")
+print(CSE_ID)
+google_search = GoogleSearchAPI(GOOGLE_API_KEY, CSE_ID)
+
+@app.route('/get-learning-path', methods=['POST'])
+def get_learning_path():
+    try:
+        # Extract the 'language' from the POST request body
+        data = request.get_json()
+        language = data.get('language', None)
+
+        if not language:
+            return jsonify({"error": "Language parameter is required"}), 400
+
+        # Fetch learning resources using the Google Custom Search API
+        learning_resources = google_search.get_learning_path(language)
+
+        if isinstance(learning_resources, str):  # In case of an error message
+            return jsonify({"error": learning_resources}), 500
+
+        # Return the fetched learning resources
+        return jsonify({
+            "language": language,
+            "resources": learning_resources
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/educator_gap', methods=['POST'])
+def analyze_curriculum():
+    """
+    API endpoint to analyze a tutor's curriculum and suggest improvements.
+    """
+    try:
+        # Get the description from the POST request body
+        data = request.get_json()
+        description = data.get('description', '').strip()
+
+        # Validate that a description was provided
+        if not description:
+            return jsonify({"error": "No description provided"}), 400
+
+        # Path to the skills.json file
+        skills_data_file = 'job_skills.json'
+
+        # Analyze the curriculum and get suggestions for improvement
+        result = analyze_and_suggest(description, skills_data_file)
+
+        # Return the extracted data and suggestions
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True)
 
