@@ -1,65 +1,99 @@
-/* Container for the Educator Flow Page */
+/* Scoped styles for EducatorFlow */
+.educator-flow-page {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('/discussion.jpg'); /* Add your background image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Educator Flow Container */
 .educator-flow-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #f5f7fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  backdrop-filter: blur(10px); /* Adds a subtle blur to the background */
+}
+
+/* Main Heading */
+.educator-flow-container h1 {
+  color: #2f80ed;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2); /* Text shadow for readability */
+}
+
+/* Form Styling */
+.educator-flow-container .educator-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Curriculum Input Field */
+.educator-flow-container .curriculum-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button */
+.educator-flow-container .submit-button {
+  background-color: #5bd8dc;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.educator-flow-container .submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.educator-flow-container .submit-button:hover:not(:disabled) {
+  background-color: #1f5bbf;
+}
+
+/* Error Message Styling */
+.educator-flow-container .error-message {
+  margin-top: 20px;
+  color: red;
+  font-size: 1.2rem;
+}
+
+/* Responsive Styling for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .educator-flow-container {
+    padding: 20px;
   }
-  
-  /* Main Heading */
+
   .educator-flow-container h1 {
-    color: #2f80ed;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-  
-  /* Form Styling */
-  .educator-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  .educator-flow-container .curriculum-input {
+    font-size: 0.9rem;
   }
-  
-  /* Curriculum Input Field */
-  .curriculum-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
+
+  .educator-flow-container .submit-button {
     font-size: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
   }
-  
-  /* Submit Button */
-  .submit-button {
-    background-color: #5bd8dc;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .submit-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .submit-button:hover:not(:disabled) {
-    background-color: #1f5bbf;
-  }
-  
-  /* Error Message Styling */
-  .error-message {
-    margin-top: 20px;
-    color: red;
-    font-size: 1.2rem;
-  }
-  
+}

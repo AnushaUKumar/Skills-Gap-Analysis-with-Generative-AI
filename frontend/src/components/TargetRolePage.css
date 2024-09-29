@@ -1,169 +1,120 @@
-/* Main page container with white background */
-.role-page-container {
+/* Scoped styles for TargetRolePage only */
+.target-role-page {
     padding: 40px;
     text-align: center;
     min-height: 100vh;
     background: linear-gradient(135deg, rgba(36, 61, 93, 0.7) 0%, rgba(71, 154, 189, 0.6) 100%, rgba(107, 171, 188, 0.7) 100%), 
-                url('/discussion.jpg'); /* Replace with your actual image path */
+                url('/discussion.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
-    color: #333; /* Darker text for contrast */
-    opacity:0.9;
-}
-
-/* Headings style */
-h2 {
-    font-family: 'Georgia', serif; /* Applying Georgia font */
-    font-size: 2.5rem; /* Adjust as needed */
-    color: white; /* White to stand out against the gradient background */
+    color: #333;
+    opacity: 0.9;
+  }
+  
+  /* Headings style */
+  .target-role-page h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: white;
     margin-bottom: 30px;
     text-align: center;
-}
-
-/* Default styling for all h3 and h4 (excluding the cards) */
-h3, h4 {
+  }
+  
+  /* Styling for all h3 and h4 (excluding the cards) */
+  .target-role-page h3, .target-role-page h4 {
     font-size: 1.8rem;
-    color: #2b2d42; /* Darker shade for headings */
-    margin-bottom: 10px;
-}
-
-/* Cursive styling specifically for h3 inside the role-card */
-.role-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; /* You can make it larger for visibility */
     color: #2b2d42;
     margin-bottom: 10px;
-}
-
-p {
+  }
+  
+  /* Cursive styling for h3 inside the role-card */
+  .target-role-page .role-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2b2d42;
+    margin-bottom: 10px;
+  }
+  
+  .target-role-page p {
     font-size: 1rem;
-    color: #555; /* Subtle text color */
+    color: #555;
     line-height: 1.5;
-}
-
-/* Grid layout for cards - 2 cards per row and centered */
-.role-cards, .subcategory-cards {
+  }
+  
+  /* Grid layout for cards - 3 cards per row */
+  .target-role-page .role-cards, .target-role-page .subcategory-cards {
     display: grid;
-    grid-template-columns: repeat(3, 2fr); /* 2 columns layout */
-    gap: 20px; /* Spacing between the cards */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-items: center;
     margin-top: 30px;
-    justify-content: center; /* Center the cards horizontally */
-}
-
-/* Card Styling with a softer gradient */
-.role-card, .subcategory-card {
-    background: rgba(81, 207, 193, 0.9); /* Full opacity for cards */
+    justify-content: center;
+  }
+  
+  /* Card styling */
+  .target-role-page .role-card, .target-role-page .subcategory-card {
+    background: rgba(81, 207, 193, 0.9);
     padding: 20px;
-    width: 300px; /* Adjust width to maintain uniformity */
+    width: 300px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    font-size: 1.2rem; /* Slightly larger font for readability */
+    font-size: 1.2rem;
     text-align: left;
     position: relative;
     overflow: hidden;
-    z-index: 1; /* Ensure cards are above the background */
-    color: #2b2d42; /* Dark text for readability against pastel */
-}
-
-/* Card hover effect */
-.role-card:hover, .subcategory-card:hover {
-    transform: translateY(-15px); /* Cards lift on hover */
+    z-index: 1;
+    color: #2b2d42;
+    
+  }
+  
+  /* Card hover effect */
+  .target-role-page .role-card:hover, .target-role-page .subcategory-card:hover {
+    transform: translateY(-15px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%); /* Slightly darker gradient on hover */
-}
-
-/* Hover animation */
-@keyframes card-hover {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-}
-
-.role-card:hover, .subcategory-card:hover {
-    animation: card-hover 0.6s ease-in-out;
-}
-
-/* Detailed view styles */
-.subcategory-detail {
-    margin-top: 20px;
-}
-
-button {
+    background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+  }
+  
+  /* Button styles */
+  .target-role-page button {
     margin-top: 20px;
     padding: 12px 30px;
-    background-color: #67d2d3; /* Red button */
+    background-color: #67d2d3;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
-}
-
-button:hover {
+    margin-right: 40px;
+  }
+  
+  .target-role-page button:hover {
     background-color: #6ad0df;
-}
-
-/* Ensure consistent padding for different screen sizes */
-@media screen and (max-width: 1024px) {
-    .role-cards, .subcategory-cards {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .target-role-page .role-cards, .target-role-page .subcategory-cards {
+      grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media screen and (max-width: 768px) {
-    .role-cards, .subcategory-cards {
-      grid-template-columns: 1fr; /* 1 column for smaller screens */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .target-role-page .role-cards, .target-role-page .subcategory-cards {
+      grid-template-columns: 1fr;
     }
-
-    .role-card, .subcategory-card {
-      width: 80%; /* Make cards full-width on smaller screens */
+  
+    .target-role-page .role-card, .target-role-page .subcategory-card {
+      width: 80%;
       margin-bottom: 20px;
     }
-}
-/* Button Styles */
-button {
-    padding: 12px 30px;
-    background-color: #59beb6; /* Red button */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-left:80px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #7ecdd3;
-}
-
-/* Button Container */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 100px;  /* Space between buttons */
-    margin-top: 20px;
-  
-}
-
-/* Next Button Styles */
-.next-button {
-    background-color:  #59beb6; 
-    margin-right: 40px;/* Green color for next button */
-}
-
-.next-button:hover {
-    background-color: #7cc9ce;
+  }
+  /* Style for the target role selection text */
+.target-role-page .role-detail h3,
+.target-role-page .role-detail p {
+  color: white; 
+  font-size: 1.6rem;/* Set the text color to white */
 }

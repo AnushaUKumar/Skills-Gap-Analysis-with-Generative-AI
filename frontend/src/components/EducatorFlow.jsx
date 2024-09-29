@@ -38,28 +38,30 @@ const EducatorFlow = () => {
   };
 
   return (
-    <div className="educator-flow-container">
-      <h1>Educator Curriculum Submission</h1>
-      <form onSubmit={handleSubmit} className="educator-form">
-        <h3>Enter Your Curriculum Details</h3>
-        <textarea
-          placeholder="Describe your curriculum, teaching experience, or any specific details"
-          value={curriculum}
-          onChange={handleCurriculumChange}
-          rows="6"
-          cols="60"
-          className="curriculum-input"
-        />
-        <button type="submit" disabled={loading} className="submit-button">
-          {loading ? 'Submitting...' : 'Submit'}
-        </button>
-      </form>
+    <div className="educator-flow-page"> {/* Page-specific container */}
+      <div className="educator-flow-container">
+        <h1>Educator Curriculum Submission</h1>
+        <form onSubmit={handleSubmit} className="educator-form">
+          <h3>Enter Your Curriculum Details</h3>
+          <textarea
+            placeholder="Describe your curriculum, teaching experience, or any specific details"
+            value={curriculum}
+            onChange={handleCurriculumChange}
+            rows="6"
+            cols="60"
+            className="curriculum-input"
+          />
+          <button type="submit" disabled={loading} className="submit-button">
+            {loading ? 'Submitting...' : 'Submit'}
+          </button>
+        </form>
 
-      {error && (
-        <div className="error-message">
-          {error}
-        </div>
-      )}
+        {error && (
+          <div className="error-message">
+            {error}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

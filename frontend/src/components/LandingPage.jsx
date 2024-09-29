@@ -58,12 +58,7 @@ function LandingPage() {
             >
               Job Seeker
             </button>
-            <button 
-              className="cta-button employer-button"
-              onClick={() => navigate('/employer')}
-            >
-              Employer
-            </button>
+            
           </div>
         </div>
       </div>

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@700&display=swap');
+
+/* Global Styles scoped to .learning-resources-page */
+.learning-resources-page {
+  position: relative;
+  background-image: url('/discussion.jpg'); /* Ensure your image path is correct */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center-aligns the content */
+  align-items: center;
+  padding: 5%;
+}
+
+.learning-resources-page-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px); /* Applies blur effect to the background */
+  background: rgba(255, 255, 255, 0.1); /* Transparent background, no white overlay */
+  border-radius: 15px; /* Optional: Makes the container rounded */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Title scoped to .learning-resources-page */
+.learning-resources-page h2 {
+  font-size: 3.7rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #002266;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Resource List */
+.learning-resources-page ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.learning-resources-page ul li {
+  background-color: rgba(100, 214, 194, 0.8); /* Slight transparency on background */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.learning-resources-page ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.learning-resources-page ul li a:hover {
+  color: #002266;
+}
+
+/* Back Button scoped to .learning-resources-page */
+.learning-resources-page button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 25px;
+  background-color: #2F80ED;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.learning-resources-page button:hover {
+  background-color: #1f5bbf;
+}

@@ -473,7 +473,7 @@ const DashboardSeeker = () => {
                 <span key={index}>{skill}</span>
               ))
             ) : (
-              <span>No skills gap.</span>
+              <span>Please Wait....</span>
             )}
           </div>
           <button className="cta-button" onClick={handleExploreLearningPaths}>

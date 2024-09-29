@@ -1,98 +1,124 @@
+/* Background image applied only to the Educator Dashboard page */
+.dashboard-educator-page {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('/discussion.jpg'); /* Add your background image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
 /* Overall dashboard container */
-.dashboard-container {
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #e9f1f7;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Main header */
-  .dashboard-header {
-    text-align: center;
-    color: #1f5bbf;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    font-weight: bold;
-  }
-  
-  /* Content section: flex layout */
-  .dashboard-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  /* Individual cards for sections */
-  .dashboard-card {
-    background-color: white;
+.dashboard-educator-container {
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%; /* Take up full width */
+  margin: 0 auto;
+  background-color:none; /* Transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main header */
+.dashboard-header {
+  text-align: center;
+  color: #1f5bbf;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2); /* Text shadow for readability */
+}
+
+/* Content section: flex layout */
+.dashboard-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%; /* Ensure it spans full width */
+  box-sizing: border-box; /* Ensure padding is respected */
+}
+
+/* Individual cards for sections */
+.dashboard-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 48%;
+  min-width: 400px;
+}
+
+/* Analysed Data */
+.analysed-data {
+  background-color: #fdfdfd;
+}
+
+/* Skills list container */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Skill tags */
+.skill-tag {
+  background-color: #1e88e5;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.skill-tag:hover {
+  background-color: #1565c0;
+}
+
+/* Job Suggestions styling */
+.job-suggestions h4 {
+  color: #1f5bbf;
+  margin-bottom: 10px;
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(220, 240, 255, 1);
+  border-left: 4px solid #1e88e5;
+  border-radius: 10px;
+  color: #333;
+}
+
+/* Missing skills tags */
+.missing-skill-tag {
+  background-color: #ffeb3b;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .dashboard-educator-container {
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    width: 48%;
-    min-width: 400px;
   }
-  
-  /* Analysed Data */
-  .analysed-data {
-    background-color: #fdfdfd;
+
+  .dashboard-card {
+    width: 100%;
   }
-  
-  /* Skills list container */
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  /* Skill tags */
-  .skill-tag {
-    background-color: #1e88e5;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .skill-tag:hover {
-    background-color: #1565c0;
-  }
-  
-  /* Job Suggestions styling */
-  .job-suggestions h4 {
-    color: #2f80ed;
-    margin-bottom: 10px;
-  }
-  
-  /* Individual suggestion item */
-  .suggestion-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f4faff;
-    border-left: 4px solid #1e88e5;
-    border-radius: 10px;
-  }
-  
-  /* Missing skills list */
-  .missing-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-  
-  /* Missing skill tags */
-  .missing-skill-tag {
-    background-color: #ffeb3b;
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  
+}

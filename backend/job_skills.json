@@ -1,99 +1,25 @@
 {
-    "IT Manager": {
-        "role": "IT Manager",
+    "Senior Business Intelligence Analyst": {
+        "role": "Senior Business Intelligence Analyst",
         "skills": [
-            "SharePoint",
-            "Co-Pilot",
-            "Microsoft applications (including Azure)",
-            "enterprise applications",
-            "Microsoft 365",
-            "Microsoft InTune",
-            "Duo",
-            "Microsoft Office",
-            "Bloomberg",
-            "Zoom",
-            "Microsoft Teams",
-            "Citrix",
-            "Microsoft Loop",
-            "Windows 11",
-            "Windows Server 2022",
-            "RHEL",
-            "PowerShell"
-        ],
-        "certifications": [],
-        "years_of_experience": "7"
-    },
-    "Senior Software Engineer": {
-        "role": "Senior Software Engineer",
-        "skills": [
-            "Typescript",
-            "JavaScript",
-            "node.js",
-            "Postgres",
-            "HTML",
-            "CSS",
-            "RESTful API design/architecture",
-            "AWS",
-            "Heroku",
-            "Infrastructure as Code (CDK/Terraform/OpenTofu)",
-            "React",
-            "Remix",
-            "NestJS"
-        ],
-        "certifications": [],
-        "years_of_experience": "6+"
-    },
-    "Project Engineer": {
-        "role": "Project Engineer",
-        "skills": [
-            "None"
-        ],
-        "certifications": [],
-        "years_of_experience": "0"
-    },
-    "Solutions Engineer / Backend": {
-        "role": "Solutions Engineer / Backend",
-        "skills": [
-            "DevOps",
-            "Elasticsearch",
-            "Linux",
-            "PostgreSQL",
-            "Python",
-            "Bash",
-            "Git"
-        ],
-        "certifications": [],
-        "years_of_experience": "3+"
-    },
-    "Lead Machine Learning Engineer": {
-        "role": "Lead Machine Learning Engineer",
-        "skills": [
-            "PyTorch",
-            "TensorFlow",
-            "Python"
-        ],
-        "certifications": [],
-        "years_of_experience": "5"
-    },
-    "Software Engineer": {
-        "role": "Software Engineer",
-        "skills": [
-            "Python",
-            "Java",
-            "JavaScript",
             "SQL",
-            "NoSQL databases",
-            "Agile software development methodologies"
-        ],
-        "certifications": [],
-        "years_of_experience": "4"
-    },
-    "Quant Researcher": {
-        "role": "Quant Researcher",
-        "skills": [
             "Python",
-            "C++",
-            "Deep learning infrastructure"
+            "dbt"
+        ],
+        "certifications": [
+            "Epic Cogito",
+            "Caboodle",
+            "and Clarity",
+            "Clinical Data Model"
+        ],
+        "years_of_experience": "5+"
+    },
+    "Business Intelligence Analyst": {
+        "role": "Business Intelligence Analyst",
+        "skills": [
+            "data analysis",
+            "sql",
+            "data visualization"
         ],
         "certifications": [],
         "years_of_experience": "0"
