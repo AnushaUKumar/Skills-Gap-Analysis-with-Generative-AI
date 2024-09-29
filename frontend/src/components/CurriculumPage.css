@@ -1,38 +1,65 @@
+/* Overall container for the curriculum page */
 .curriculum-page-container {
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .curriculum-header {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #1f5bbf;
-    margin-bottom: 30px;
-  }
-  
-  .curriculum-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .curriculum-item {
-    padding: 20px;
-    background-color: #f4faff;
-    margin-bottom: 15px;
-    border-left: 4px solid #1e88e5;
-    border-radius: 8px;
-  }
-  
-  .curriculum-item h3 {
-    color: #1e88e5;
-  }
-  
-  .curriculum-item a {
-    text-decoration: none;
-  }
-  
-  .curriculum-item a:hover {
-    text-decoration: underline;
-  }
-  
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: black; /* Change all text to black */
+}
+
+/* Curriculum Header */
+.curriculum-header {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: black; /* Ensure the header text is black */
+}
+
+/* List styling */
+.curriculum-list {
+  list-style-type: none;
+  padding: 0;
+  color: black; /* Make sure list text is black */
+}
+
+/* Individual curriculum items */
+.curriculum-item {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Curriculum item hover effect */
+.curriculum-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Title of each curriculum item */
+.curriculum-item h3 {
+  color: black; /* Change title text to black */
+  margin-bottom: 10px;
+}
+
+/* Snippet under each title */
+.curriculum-item p {
+  color: black; /* Ensure the snippet text is black */
+}
+
+/* Anchor link styling */
+.curriculum-item a {
+  text-decoration: none;
+  color: black; /* Ensure link text is black */
+  transition: color 0.3s ease;
+}
+
+/* Link hover effect */
+.curriculum-item a:hover {
+  color: #1e88e5; /* Slightly change color on hover to blue */
+}
