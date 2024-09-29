@@ -8,6 +8,7 @@ import EducatorFlow from './components/EducatorFlow';
 import DashboardSeeker from './components/DashboardSeeker';
 import DashboardEducator from './components/DashboardEducator';
 import TargetRolePage from './components/TargetRolePage'; // Import the new component
+import LearningPathDashboard from './components/LearningPathDashboard';
 function App() {
   return (
     <Router>
@@ -19,7 +20,7 @@ function App() {
         <Route path="/educator" element={<EducatorFlow />} />
         <Route path="/educator-dashboard" element={<DashboardEducator />} />
         <Route path="/employer" element={<EmployerButton />} /> {/* Add new route for Employer */}
-      
+        <Route path="/learning-paths" element={<LearningPathDashboard />} />
       </Routes>
     </Router>
   );
