@@ -260,10 +260,10 @@ def analyze_skills():
         "location": "New York"  # Hardcoded location
     }
     
-    # scrape_response = requests.post(SCRAPE_JOBS_API_URL, json=scrape_payload)
+    scrape_response = requests.post(SCRAPE_JOBS_API_URL, json=scrape_payload)
     
-    # if scrape_response.status_code != 200:
-    #     return jsonify({"error": "Failed to scrape jobs data."}), 500
+    if scrape_response.status_code != 200:
+        return jsonify({"error": "Failed to scrape jobs data."}), 500
 
     # Step 2: Load the scraped job skills from the file
     if not os.path.exists('job_skills.json'):
