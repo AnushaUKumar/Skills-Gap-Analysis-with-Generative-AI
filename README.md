@@ -68,3 +68,24 @@ The model used for skill extraction and recommendation is based on **LLaMA 3.1**
    ```bash
    git clone https://github.com/your-username/skills-gap-ai.git
    cd skills-gap-ai
+## Install the Required Dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Frontend Setup:
+```bash
+cd frontend
+npm install
+npm start
+```
+Access the dashboard and interact with the model by navigating to http://localhost:3000.
+
+## Future Enhancements
+
+-**Enhanced Scraping**: Improve scraping to include data from additional platforms like Indeed, Glassdoor, etc.
+-**Improved AI Models**: Experiment with more advanced models for skills extraction and personalized learning recommendations.
+-**Soft Skills Identification**: Include the analysis of soft skills alongside technical skills for more comprehensive skill gap identification.
+
+
