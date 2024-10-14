@@ -84,8 +84,8 @@ Access the dashboard and interact with the model by navigating to http://localho
 
 ## Future Enhancements
 
--**Enhanced Scraping**: Improve scraping to include data from additional platforms like Indeed, Glassdoor, etc.
--**Improved AI Models**: Experiment with more advanced models for skills extraction and personalized learning recommendations.
--**Soft Skills Identification**: Include the analysis of soft skills alongside technical skills for more comprehensive skill gap identification.
+- **Enhanced Scraping**: Improve scraping to include data from additional platforms like Indeed, Glassdoor, etc.
+- **Improved AI Models**: Experiment with more advanced models for skills extraction and personalized learning recommendations.
+- **Soft Skills Identification**: Include the analysis of soft skills alongside technical skills for more comprehensive skill gap identification.
 
 
